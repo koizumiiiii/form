@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html5/css3のフォーム jsなし</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-test">
+        <form action="">
+            <h1>html5/css3のフォーム jsなし</h1>
+            <p>
+                <label for="fullname">名前</label>
+                <input type="text" id="fullname" name="fullname" placeholder="手須藤 太郎" autocomplete="on" required>
+            </p>
+            <p>
+                <label for="email_addr">メールアドレス</label>
+                <input type="email" id="email_addr" name="email_addr" pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$" placeholder="test@example.com" required>
+            </p>
+            <p>
+                <label for="email_addr_repeat">メールアドレス（確認）</label>
+                <input type="email" id="email_addr_repeat" name="email_addr_repeat" pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$" placeholder="test@example.com" required>
+            </p>
+            <p>
+                <label for="phone_num">電話番号</label>
+                <input type="tel" id="phone_num" name="phone_num" placeholder="09012345678" autocomplete="on">
+            </p>
+            <p>
+                <label for="region">国・地域</label>
+                <input type="text" list="region">
+                <datalist id="region">
+                    <option value="日本"></option>
+                    <option value="アフリカ"></option>
+                    <option value="マレーシア"></option>
+                </datalist>
+            </p>
+            <p class="form_radio">
+                <span>性別</span>
+                <label><input type="radio" name="sex" value="男性">男性</label>
+                <label><input type="radio" name="sex" value="女性">女性</label>
+                <label><input type="radio" name="sex" value="どちらでもない">どちらでもない</label>
+            </p>
+            <p>
+                <label for="message">備考</label>
+                <textarea name="message" id="message" cols="40" rows="10" maxlength="120" minlength="0"></textarea>
+            </p>
+            <p class="form_check">
+                <label><input type="checkbox" name="agree" value="1" required>利用規約的なあれに同意する</label>
+            </p>
+            <button>送信</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+$fontColor: #5f5f5f;
+$errorColor: #fe4f4f;
+$paleColor: #c1c1c1;
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #7ec9e2;
+    margin: 0;
+    padding: 0;
+}
+
+.form-test {
+    background: #fff;
+    width: 500px;
+    padding: 20px;
+    margin: 50px auto;
+    h1 {
+        font: {
+            size: 20px;
+            weight: normal;
+        }
+        color: $paleColor;
+        padding-bottom: 20px;
+        border-bottom: solid 1px $paleColor;
+        text-align: center;
+    }
+    form {
+        text-align: center;
+    }
+}
+p {
+    width: 100%;
+    margin: 15px auto;
+    text-align: left;
+}
+label {
+    display: block;
+    color: $fontColor;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px $paleColor;
+}
+textarea {
+    @extend input;
+}
+.form_radio {
+    span {
+        display: block;
+    }
+    input {
+        width: auto;
+    }
+    label {
+        cursor: pointer;
+        display: inline-block;
+    }
+}
+.form_check {
+    @extend .form_radio;
+    text-align: center;
+}
+button {
+    margin: 10px auto;
+    border-radius: 3px;
+    width: 200px;
+    padding: 8px;
+    border: none;
+    background: #7ec9e2;
+    cursor: pointer;
+    color: #fff;
+    &:hover {
+        position: relative;
+        top: 1px;
+    }
+}
