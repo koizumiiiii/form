@@ -1,12 +1,12 @@
 $fontColor: #5f5f5f;
 $errorColor: #fe4f4f;
 $paleColor: #c1c1c1;
-
+$clearColor: #7ec9e2;
 * {
     box-sizing: border-box;
 }
 body {
-    background: #7ec9e2;
+    background: $clearColor;
     margin: 0;
     padding: 0;
 }
@@ -35,6 +35,28 @@ p {
     margin: 15px auto;
     text-align: left;
 }
+.ph-shown {
+    position: relative;
+    padding-top: 1.5rem;
+    label {
+        position: absolute;
+        top: 0;
+        opacity: 1;
+        transform: translateY()0;
+        transition: all 0.2s ease-out;
+    }
+    input:placeholder-shown + label {
+        opacity: 0;
+        transform: translateY(1rem);
+        }
+    }
+
+.help-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
 label {
     display: block;
     color: $fontColor;
@@ -43,9 +65,24 @@ input {
     width: 100%;
     padding: 10px;
     border: solid 1px $paleColor;
+    &:valid:required {
+        border-color: $clearColor;
+    }
+    &:invalid {
+        border-color: $errorColor;
+        & + .help-text {
+            color: $errorColor;
+        }
+    }
+    &:required + .help-text::before {
+        content: '*\5FC5\9808';
+    }
+
 }
 textarea {
-    @extend input;
+    width: 100%;
+    padding: 10px;
+    border: solid 1px $paleColor;
 }
 .form_radio {
     span {

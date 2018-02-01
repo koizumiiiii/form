@@ -11,17 +11,19 @@
     <div class="form-test">
         <form action="">
             <h1>html5/css3のフォーム jsなし</h1>
-            <p>
+            <p class="ph-shown">
+                <input type="text" id="fullname" name="fullname" placeholder="名前" autocomplete="on" required>
                 <label for="fullname">名前</label>
-                <input type="text" id="fullname" name="fullname" placeholder="手須藤 太郎" autocomplete="on" required>
             </p>
-            <p>
+            <p class="required-text">
                 <label for="email_addr">メールアドレス</label>
                 <input type="email" id="email_addr" name="email_addr" pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$" placeholder="test@example.com" required>
+                <span class="help-text"></span>
             </p>
             <p>
                 <label for="email_addr_repeat">メールアドレス（確認）</label>
                 <input type="email" id="email_addr_repeat" name="email_addr_repeat" pattern="^[a-zA-Z]{1}[0-9a-zA-Z]+[\w\.-]+@[\w\.-]+\.\w{2,}$" placeholder="test@example.com" required>
+                <span class="help-text"></span>
             </p>
             <p>
                 <label for="phone_num">電話番号</label>
