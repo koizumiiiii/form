@@ -60,6 +60,7 @@ p {
   display: block;
   margin-top: 5px;
   font-size: 12px;
+  display: none;
 }
 
 label {
@@ -83,10 +84,11 @@ input:invalid {
 
 input:invalid + .help-text {
   color: #fe4f4f;
+  display: block;
 }
 
 input:required + .help-text::before {
-  content: '*\5FC5\9808';
+  content: '\5FC5\9808\9805\76EE\3067\3059';
 }
 
 textarea {
@@ -95,17 +97,63 @@ textarea {
   border: solid 1px #c1c1c1;
 }
 
-.form_radio span, .form_check span {
+.form_radio span {
   display: block;
 }
 
-.form_radio input, .form_check input {
+.form_radio input {
   width: auto;
 }
 
-.form_radio label, .form_check label {
+.form_radio label {
   cursor: pointer;
   display: inline-block;
+  position: relative;
+  padding: 5px 8px 5px 20px;
+  margin-right: 10px;
+  background: #efefef;
+  border: solid 1px #efefef;
+  border-radius: 5px;
+}
+
+.form_radio label::before {
+  content: '';
+  display: block;
+  border: solid 2px #c1c1c1;
+  border-radius: 20px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  margin-top: -8px;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked + label {
+  color: #7ec9e2;
+  background: #fff;
+  border: solid 1px #7ec9e2;
+}
+
+input[type=radio]:checked + label::before {
+  border-color: #7ec9e2;
+}
+
+input[type=radio]:checked + label::after {
+  content: '';
+  display: block;
+  background: #7ec9e2;
+  border-radius: 20px;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  margin-top: -4px;
 }
 
 .form_check {
