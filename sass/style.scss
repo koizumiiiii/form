@@ -16,6 +16,8 @@ body {
     width: 500px;
     padding: 20px;
     margin: 50px auto;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(64,116,133, 0.5);
     h1 {
         font: {
             size: 20px;
@@ -139,13 +141,60 @@ input[type=radio] {
         }
     }
 }
+
 .form_check {
     text-align: center;
+    label {
+        position: relative;
+        padding-left: 26px;
+        display: inline-block;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+        }
+        &::before {
+            border: solid 2px $paleColor;
+            content: '';
+            display: block;
+            border-radius: 3px;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -12px;
+        }
+    }
 }
+input[type=checkbox] {
+    display: none;
+    &:checked + label {
+        color: $clearColor;
+        background: #fff;
+        &::before {
+            content: '';
+            display: block;
+            border-color: $clearColor;
+        }
+        &::after {
+            content: '';
+            display: block;
+            background: $clearColor;
+            border-radius: 2px;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 6px;
+            margin-top: -6px;
+        }
+    }
+}
+
 button {
     margin: 10px auto;
     border-radius: 3px;
-    width: 200px;
+    width: 250px;
     padding: 8px;
     border: none;
     background: #7ec9e2;
